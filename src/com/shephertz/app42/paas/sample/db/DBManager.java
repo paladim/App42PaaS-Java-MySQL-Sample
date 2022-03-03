@@ -19,20 +19,20 @@ public class DBManager {
 	private DriverManagerDataSource dataSource = null;
 	private static final DBManager dsManager = new DBManager();
 	static {
-		try {
+		//try {
 			createTable("create table user(name varchar(255), email varchar(255), description text)");
-		} catch (Exception e) {
+		//} catch (Exception e) {
 			// do nothing
 			// table already created
-			System.out.println("Table Already Created");	
-		}
+		//	System.out.println("Table Already Created");	
+		//}
 	}
 
 	/*
 	 * Initialize MySql
 	 */
 	public DBManager() {
-		try {
+		//try {
 			dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 			String dbUrl = Util.getDBIp();
@@ -47,9 +47,9 @@ public class DBManager {
 					+ dbName + "?autoReconnect=true");
 			dataSource.setUsername(username);
 			dataSource.setPassword(password);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		//} catch (Exception e) {
+		//	e.printStackTrace();
+		//}
 	}
 
 	/*
