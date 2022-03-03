@@ -121,7 +121,7 @@ public class DBManager {
 		dataSource.getConnection().close();
 	}
 
-	public static void createTable(String query) throws SQLException {
+	public static void createTable(String query) {
 		JdbcTemplate db = new JdbcTemplate(DBManager.getInstance()
 				.getDataSource());
 		try {
